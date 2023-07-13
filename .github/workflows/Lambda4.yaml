@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - "LambdaF4/**"
+      - ".github/workflows/Lambda4.yaml"
 
 jobs:
   sonarcloud:
@@ -12,8 +13,8 @@ jobs:
         uses: actions/checkout@v2
         
       - name: SonarCloud Analysis
-        working-directory: LambdaF4
         uses: sonarsource/sonarcloud-github-action@v1.8
+        working-directory: LambdaF4
         with:
           args: >
             -Dsonar.organization=cyabge-koredevdata
