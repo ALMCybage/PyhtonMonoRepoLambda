@@ -8,9 +8,12 @@ jobs:
   sonarcloud:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
       - name: SonarCloud Analysis
         uses: sonarsource/sonarcloud-github-action@v1.8
+        working-directory: my-subdirectory
         with:
           args: >
             -Dsonar.organization=cyabge-koredevdata
